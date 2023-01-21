@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Syschool.Domain\Syschool.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
