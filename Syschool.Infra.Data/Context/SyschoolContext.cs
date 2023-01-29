@@ -11,13 +11,15 @@ namespace Syschool.Infra.Data.Context
         {
         }
 
-        public DbSet<Aluno> Alunos { get; set; }
+        public DbSet<Professor> Alunos { get; set; }
+        public DbSet<Professor> Professores { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
 
             builder.ApplyConfiguration(new AlunoConfiguration());
+            builder.ApplyConfiguration(new ProfessorConfiguration());
         }
     }
 }

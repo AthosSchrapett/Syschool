@@ -1,6 +1,6 @@
-﻿namespace Syschool.Domain.Interfaces.Repositories
+﻿namespace Syschool.Domain.Interfaces.Services
 {
-    public interface IBaseRepository<TEntity> where TEntity : class
+    public interface IBaseService<TEntity> where TEntity : class
     {
         void Insert(TEntity entity);
         void Update(TEntity entity);

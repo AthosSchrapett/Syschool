@@ -1,7 +1,10 @@
-﻿namespace Syschool.Domain.Entities
+﻿using Syschool.Domain.Entities.Genericos;
+
+namespace Syschool.Domain.Entities
 {
-    public class Aluno : BaseEntity
+    public class Aluno : DadosPrincipais
     {
-        public string Nome { get; set; }
+        public string Matricula { get; set; }
+        public DateTime DataMatricula { get; set; }
     }
 }

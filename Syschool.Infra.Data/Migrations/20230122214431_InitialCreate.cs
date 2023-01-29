@@ -16,7 +16,19 @@ namespace Syschool.Infra.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Nome = table.Column<string>(type: "varchar(50)", nullable: true)
+                    Matricula = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DataMatricula = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Status = table.Column<bool>(type: "bit", nullable: false),
+                    Nome = table.Column<string>(type: "varchar(50)", nullable: false),
+                    Sobrenome = table.Column<string>(type: "varchar(80)", nullable: false),
+                    Cpf = table.Column<string>(type: "varchar(11)", nullable: false),
+                    DataNascimento = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Logradouro = table.Column<string>(type: "varchar(100)", nullable: false),
+                    Numero = table.Column<string>(type: "varchar(20)", nullable: false),
+                    Complemento = table.Column<string>(type: "varchar(30)", nullable: true),
+                    Cidade = table.Column<string>(type: "varchar(30)", nullable: false),
+                    Uf = table.Column<string>(type: "varchar(2)", nullable: false),
+                    Cep = table.Column<string>(type: "varchar(8)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -60,6 +72,28 @@ namespace Syschool.Infra.Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Professores",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Status = table.Column<bool>(type: "bit", nullable: false),
+                    Nome = table.Column<string>(type: "varchar(50)", nullable: false),
+                    Sobrenome = table.Column<string>(type: "varchar(80)", nullable: false),
+                    Cpf = table.Column<string>(type: "varchar(11)", nullable: false),
+                    DataNascimento = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Logradouro = table.Column<string>(type: "varchar(100)", nullable: false),
+                    Numero = table.Column<string>(type: "varchar(20)", nullable: false),
+                    Complemento = table.Column<string>(type: "varchar(30)", nullable: true),
+                    Cidade = table.Column<string>(type: "varchar(30)", nullable: false),
+                    Uf = table.Column<string>(type: "varchar(2)", nullable: false),
+                    Cep = table.Column<string>(type: "varchar(8)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Professores", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -228,6 +262,9 @@ namespace Syschool.Infra.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "Professores");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

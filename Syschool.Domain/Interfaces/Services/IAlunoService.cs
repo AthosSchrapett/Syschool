@@ -2,12 +2,8 @@
 
 namespace Syschool.Domain.Interfaces.Services
 {
-    public interface IAlunoService
+    public interface IAlunoService: IBaseService<Aluno>
     {
-        void InsertAluno(Aluno aluno);
-        void UpdateAluno(Aluno aluno);
-        void DeleteAluno(Guid id);
-        IEnumerable<Aluno> SelectAllAlunos();
-        Aluno SelectAlunoById(Guid id);
+        public IEnumerable<Guid> GetIds();
     }
 }

@@ -7,11 +7,12 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Syschool.Infra.Data.UnitOfWork
 {
-    public class UnitOfWork : IUnitOfWork
+    public class UnitOfWork<TEntity> : IUnitOfWork<TEntity> where TEntity : class
     {
         #region Repositories
 
-        private IAlunoRepository _alunoRepository;
+        private IBaseRepository<TEntity> _repository;
+        //private IAlunoRepository _alunoRepository;
 
         #endregion
 
@@ -27,16 +28,9 @@ namespace Syschool.Infra.Data.UnitOfWork
             _objTran = _syschoolContext.Database.BeginTransaction();
         }
 
-        public IAlunoRepository AlunoRepository
+        public IBaseRepository<TEntity> Repository
         {
-            get
-            {
-                if (_alunoRepository == null)
-                {
-                    _alunoRepository = new AlunoRepository(_syschoolContext);
-                }
-                return _alunoRepository;
-            }
+            get => _repository = _repository == null ? new BaseRepository<TEntity>(_syschoolContext) : _repository;
         }
 
         public void Commit()
