@@ -10,7 +10,7 @@ namespace Syschool.Infra.Data.Repository
 
         public BaseRepository(SyschoolContext syschoolContext) => _syschoolContext = syschoolContext;
 
-        public void Insert(TEntity entity) => _syschoolContext.Set<TEntity>().AddAsync(entity);
+        public void Insert(TEntity entity) => _syschoolContext.Set<TEntity>().Add(entity);
         public IEnumerable<TEntity> Get() => _syschoolContext.Set<TEntity>();
         public TEntity Get(Guid id) => _syschoolContext.Set<TEntity>().Find(id);
         public void Update(TEntity entity) => _syschoolContext.Entry(entity).State = EntityState.Modified;

@@ -17,7 +17,7 @@ namespace Syschool.Infra.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.2")
+                .HasAnnotation("ProductVersion", "7.0.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -242,17 +242,18 @@ namespace Syschool.Infra.Data.Migrations
                         .HasColumnType("varchar(11)");
 
                     b.Property<DateTime>("DataMatricula")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("date");
 
                     b.Property<DateTime>("DataNascimento")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("date");
 
                     b.Property<string>("Logradouro")
                         .IsRequired()
                         .HasColumnType("varchar(100)");
 
                     b.Property<string>("Matricula")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
 
                     b.Property<string>("Nome")
                         .IsRequired()
@@ -300,7 +301,7 @@ namespace Syschool.Infra.Data.Migrations
                         .HasColumnType("varchar(11)");
 
                     b.Property<DateTime>("DataNascimento")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("date");
 
                     b.Property<string>("Logradouro")
                         .IsRequired()

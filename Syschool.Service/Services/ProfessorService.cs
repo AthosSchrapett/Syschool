@@ -1,11 +1,6 @@
 ﻿using Syschool.Domain.Entities;
 using Syschool.Domain.Interfaces.Services;
 using Syschool.Domain.Interfaces.UnitOfWork;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Syschool.Service.Services
 {

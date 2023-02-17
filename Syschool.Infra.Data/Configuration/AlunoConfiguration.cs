@@ -19,9 +19,10 @@ namespace Syschool.Infra.Data.Configuration
             builder.Property(x => x.Cidade).IsRequired().HasColumnType("varchar(30)");
             builder.Property(x => x.Uf).IsRequired().HasColumnType("varchar(2)");
             builder.Property(x => x.Cep).IsRequired().HasColumnType("varchar(8)");
-            builder.Property(x => x.DataMatricula).IsRequired();
-            builder.Property(x => x.DataNascimento).IsRequired();
+            builder.Property(x => x.DataMatricula).IsRequired().HasColumnType("date");
+            builder.Property(x => x.DataNascimento).IsRequired().HasColumnType("date");
             builder.Property(x => x.Status).IsRequired();
+            builder.Property(x => x.Matricula).IsRequired().HasColumnType("varchar(50)");
         }
     }
 }

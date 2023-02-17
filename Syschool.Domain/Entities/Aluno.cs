@@ -5,6 +5,6 @@ namespace Syschool.Domain.Entities
     public class Aluno : DadosPrincipais
     {
         public string Matricula { get; set; }
-        public DateTime DataMatricula { get; set; }
+        public DateTime DataMatricula { get; set; }        
     }
 }

@@ -4,5 +4,10 @@
     {
         public Guid Id { get; set; }
         public bool Status { get; set; }
+
+        public BaseEntity()
+        {
+            Id = Guid.NewGuid();
+        }
     }
 }

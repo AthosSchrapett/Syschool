@@ -12,7 +12,6 @@ namespace Syschool.Infra.Data.UnitOfWork
         #region Repositories
 
         private IBaseRepository<TEntity> _repository;
-        //private IAlunoRepository _alunoRepository;
 
         #endregion
 

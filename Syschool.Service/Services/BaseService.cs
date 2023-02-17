@@ -31,6 +31,7 @@ namespace Syschool.Service.Services
         public void Insert(TEntity entity)
         {
             _unitOfWork.Repository.Insert(entity);
+            _unitOfWork.Save();
         }
 
         public void Update(TEntity entity)

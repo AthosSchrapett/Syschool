@@ -9,10 +9,5 @@ namespace Syschool.Service.Services
         public AlunoService(IUnitOfWork<Aluno> unitOfWork) : base(unitOfWork)
         {
         }
-
-        public IEnumerable<Guid> GetIds()
-        {
-            return base.Get().Select(x => x.Id);
-        }
     }
 }
