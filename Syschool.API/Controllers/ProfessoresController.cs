@@ -39,7 +39,7 @@ namespace Syschool.API.Controllers
                 return BadRequest();
             }
 
-            _professorService.Insert(professor);
+            _professorService.InsertProfessor(professor);
 
             return Ok(professor);
         }
@@ -52,7 +52,7 @@ namespace Syschool.API.Controllers
                 return BadRequest();
             }
 
-            _professorService.Update(professor);
+            _professorService.UpdateProfessor(professor);
 
             return Ok(professor);
         }
@@ -60,7 +60,7 @@ namespace Syschool.API.Controllers
         [HttpDelete]
         public IActionResult Delete(Guid id)
         {
-            _professorService.Delete(id);
+            _professorService.DeleteProfessor(id);
 
             return Ok();
         }

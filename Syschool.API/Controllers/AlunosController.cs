@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Syschool.Domain.Entities;
 using Syschool.Domain.Interfaces.Services;
 
@@ -40,7 +39,7 @@ namespace Syschool.API.Controllers
                 return BadRequest();
             }
 
-            _alunoService.Insert(aluno);
+            _alunoService.InsertAluno(aluno);
 
             return Ok(aluno);
         }
@@ -53,7 +52,7 @@ namespace Syschool.API.Controllers
                 return BadRequest();
             }
 
-            _alunoService.Update(aluno);
+            _alunoService.UpdateAluno(aluno);
 
             return Ok(aluno);
         }
@@ -61,7 +60,7 @@ namespace Syschool.API.Controllers
         [HttpDelete]
         public IActionResult Delete(Guid id)
         {
-            _alunoService.Delete(id);
+            _alunoService.DeleteAluno(id);
 
             return Ok();
         }

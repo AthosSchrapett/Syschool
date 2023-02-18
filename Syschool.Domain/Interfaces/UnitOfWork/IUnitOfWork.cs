@@ -2,9 +2,10 @@
 
 namespace Syschool.Domain.Interfaces.UnitOfWork
 {
-    public interface IUnitOfWork<TEntity> where TEntity : class
+    public interface IUnitOfWork : IDisposable
     {
-        public IBaseRepository<TEntity> Repository { get; }
+        IAlunoRepository AlunoRepository { get; }
+        IProfessorRepository ProfessorRepository { get; }
         void CreateTransaction();
         void Commit();
         void Rollback();

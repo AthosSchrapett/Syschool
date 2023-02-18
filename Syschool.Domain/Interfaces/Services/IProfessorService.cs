@@ -2,7 +2,12 @@
 
 namespace Syschool.Domain.Interfaces.Services
 {
-    public interface IProfessorService : IBaseService<Professor>
+    public interface IProfessorService
     {
+        void InsertProfessor(Professor professor);
+        void UpdateProfessor(Professor professor);
+        void DeleteProfessor(Guid id);
+        IEnumerable<Professor> Get();
+        Professor Get(Guid id);
     }
 }

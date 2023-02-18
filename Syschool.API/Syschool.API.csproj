@@ -16,9 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Syschool.Application\Syschool.Application.csproj" />
     <ProjectReference Include="..\Syschool.Domain\Syschool.Domain.csproj" />
     <ProjectReference Include="..\Syschool.Infra.Data\Syschool.Infra.Data.csproj" />
-    <ProjectReference Include="..\Syschool.Service\Syschool.Service.csproj" />
   </ItemGroup>
 
 </Project>

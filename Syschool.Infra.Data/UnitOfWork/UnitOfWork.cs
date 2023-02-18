@@ -2,16 +2,18 @@
 using Syschool.Domain.Interfaces.Repositories;
 using Syschool.Domain.Interfaces.UnitOfWork;
 using Syschool.Infra.Data.Context;
+using Syschool.Infra.Data.Repositories;
 using Syschool.Infra.Data.Repository;
 using System.ComponentModel.DataAnnotations;
 
 namespace Syschool.Infra.Data.UnitOfWork
 {
-    public class UnitOfWork<TEntity> : IUnitOfWork<TEntity> where TEntity : class
+    public class UnitOfWork : IUnitOfWork
     {
         #region Repositories
 
-        private IBaseRepository<TEntity> _repository;
+        private IAlunoRepository _alunoRepository;
+        private IProfessorRepository _professorRepository;
 
         #endregion
 
@@ -27,9 +29,14 @@ namespace Syschool.Infra.Data.UnitOfWork
             _objTran = _syschoolContext.Database.BeginTransaction();
         }
 
-        public IBaseRepository<TEntity> Repository
+        public IAlunoRepository AlunoRepository
         {
-            get => _repository = _repository == null ? new BaseRepository<TEntity>(_syschoolContext) : _repository;
+            get => _alunoRepository = _alunoRepository == null ? new AlunoRepository(_syschoolContext) : _alunoRepository;
+        }
+
+        public IProfessorRepository ProfessorRepository
+        {
+            get => _professorRepository = _professorRepository == null ? new ProfessorRepository(_syschoolContext) : _professorRepository;
         }
 
         public void Commit()
