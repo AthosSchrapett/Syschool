@@ -39,6 +39,14 @@ namespace Syschool.Infra.Data.UnitOfWork
             get => _professorRepository = _professorRepository == null ? new ProfessorRepository(_syschoolContext) : _professorRepository;
         }
 
+        IBaseRepository<TEntity> GetRepository<TEntity>() where TEntity : class
+        {
+            if(_syschoolContext != null)
+                return  BaseRepository<TEntity>(_syschoolContex);
+            else
+                return null;
+        }
+
         public void Commit()
         {
             _objTran.Commit();
